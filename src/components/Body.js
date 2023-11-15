@@ -82,9 +82,9 @@ const Body = () => {
         );
 
       const json = await data.json();
-      //console.log(json.data.cards[1].card.card.imageGridCards.info);
+      console.log(json.data.cards[2]);
       //Optional chaining mechanisam
-      setlistOfRestarent(json.data.cards[1].card.card.imageGridCards.info);
+      setlistOfRestarent(json.data.cards[2].card.card.facetList);
      
     };
 
@@ -92,9 +92,7 @@ const Body = () => {
     if(listOfRestaurent.length===0){
         return <Shimmer/>
     }
-    return listOfRestaurent.length===0 ? (
-    <Shimmer/>
-    ): (
+    return (
         <div className='body'>
           <div className='filter'>
             <button className="filter-btn" 
