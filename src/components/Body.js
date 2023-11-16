@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import RestuarentCard from "./RestaurantCard";
-import Shimmer from './Shimmer';
+//import Shimmer from './Shimmer';
 //import resList from '../utils/mockData';
 
 
@@ -78,20 +78,20 @@ const Body = () => {
 
     const fetchData= async() => {
       const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.122002&lng=77.610575&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://swapi.dev/api/people"
         );
 
-      const json = await data.json();
-      console.log(json.data.cards[2]);
+      const json = await data.json();      
+      //console.log(json.results[3].name);
       //Optional chaining mechanisam
-      setlistOfRestarent(json.data.cards[2].card.card.facetList);
+      setlistOfRestarent(json.results);
      
     };
 
     // conditional rendering
-    if(listOfRestaurent.length===0){
-        return <Shimmer/>
-    }
+    // if(listOfRestaurent.length===0){
+    //     return <Shimmer/>
+    // }
     return (
         <div className='body'>
           <div className='filter'>
@@ -106,6 +106,7 @@ const Body = () => {
             >Top Rated Restaurant</button>
           </div>
           <div className="res-container">
+
            {listOfRestaurent.map((restaurants) => (
            <RestuarentCard key={restaurants.id} resData={restaurants}/>
           ) )}  

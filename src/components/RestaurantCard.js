@@ -2,15 +2,15 @@ const RestuarentCard = (props) => {
     /*console.log(props);*/
     const {resData} = props;
     const{
-      id,
-      label,
+      name,
+      
       
     } =resData;
    
     return(
       <div className='res-card'>
-        <h2>{id}</h2>
-        <h2>{label}</h2>
+        <h2>{name}</h2>
+        <h2>kk</h2>
         </div>
     )
   }

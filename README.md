@@ -32,3 +32,7 @@ Hooks-> hooks are normal js functions
 When ever a state variable changes react will re-render the variable
 
 shimmer UI -> if API is loading time we need to load with shimmer UI
+
+# 2 types of routing in web pages
+client side routing
+server side routing
